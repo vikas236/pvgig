@@ -1,0 +1,158 @@
+nav {
+  width: 100vw;
+  height: 175px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+.logo a {
+  color: white;
+  font-size: 36px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+/* hammenu */
+
+.ham {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 25px 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.ham .bar,
+.ham .bar::after {
+  width: 43px;
+  height: 0;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.ham .bar {
+  padding: 1px 0 !important;
+}
+
+.ham .bar::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  top: 18px;
+  right: 0;
+}
+
+.ham.active .bar {
+  transform: rotate(45deg);
+  background: #050100;
+}
+
+.ham.active .bar::after {
+  transform: rotate(90deg) translateY(-50%);
+  width: 43px;
+  top: 0;
+  background: #050100;
+}
+
+.nav_links {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  background: white;
+  position: absolute;
+  top: 25px;
+  right: 55px;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 60px;
+  opacity: 0;
+  transition: opacity 0.3s, width 0.4s, height 0.4s;
+}
+
+.nav_links.active {
+  width: 400px;
+  height: 475px;
+  opacity: 1;
+}
+
+.nav_links a {
+  color: #050100;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 15px;
+  position: relative;
+  bottom: -25px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.nav_links a.active {
+  bottom: 0;
+  opacity: 1;
+}
+
+.nav_links .message {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  opacity: 0;
+  bottom: -20px;
+  transition: 0.3s;
+}
+
+.nav_links .message.active {
+  bottom: 0;
+  opacity: 1;
+}
+
+.nav_links .social {
+  width: 100%;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+  position: relative;
+  bottom: -60px;
+  opacity: 0;
+}
+
+.nav_links .social.active {
+  bottom: -35px;
+  opacity: 1;
+}
+
+.nav_links .social span {
+  font-size: 24px;
+}
+
+.nav_links .social span:nth-child(1) {
+  font-family: "Rubik Mono One", monospace;
+}
+
+.nav_links .social span:nth-child(2) {
+  font-family: "Noto Sans Sundanese", sans-serif;
+}
+
+.nav_links .social span:nth-child(3) {
+  font-family: "Orbitron", sans-serif;
+}
+
+.nav_links .social span:nth-child(4) {
+  font-family: "Redacted Script", cursive;
+}

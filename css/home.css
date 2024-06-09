@@ -1,0 +1,20 @@
+.intro {
+  width: 100vw;
+  height: 100vh;
+  background: #050100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro h1 {
+  width: 850px;
+  font-size: 150px;
+  color: white;
+  font-weight: 800;
+  transition: 0.7s;
+}
+
+.intro h1 span {
+  font-size: 124px;
+}
