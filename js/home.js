@@ -22,13 +22,36 @@ async function homeW() {
           }, interval);
         });
       } else {
-        title.style.width = "1100px";
+        title.classList.add("active");
         setTimeout(() => {
           title.innerHTML = `<h1>WE </h1><span>${s[0]}</span><h1 class="name"> ${s[1]}</h1>`;
         }, 750);
       }
     }, 1750 * i);
   });
+
+  setTimeout(() => {
+    const container = document.querySelector(".subtext");
+    let sentence = "tranform your idea into a webpage";
+
+    let s = sentence.split("");
+    for (let i = 0; i < s.length + 1; i++) {
+      setTimeout(() => {
+        let html_content = s
+          .slice(0, i + 1)
+          .join("")
+          .toUpperCase();
+        if (i == s.length) {
+          setTimeout(() => {
+            html_content += `<i class="fa-solid fa-caret-down"></i>`;
+            container.innerHTML = html_content;
+          }, 500);
+        }
+
+        container.innerHTML = html_content;
+      }, 25 * i);
+    }
+  }, 1750 * 4);
 }
 
 export default homeW;

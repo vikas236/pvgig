@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .intro .title {
@@ -13,6 +14,10 @@
   font-weight: 800;
   transition: 0.7s;
   letter-spacing: -10px;
+}
+
+.intro .title.active {
+  width: 1100px;
 }
 
 .intro h1 {
@@ -31,4 +36,36 @@
   position: relative;
   margin-left: 60px;
   font-weight: 600;
+  display: inline-block;
+}
+
+.intro .subtext {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  color: white;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.intro i {
+  font-size: 24px;
+  padding-left: 10px;
+  animation: moveUpDown 1.7s infinite;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+/* Define the keyframes for the up-and-down animation */
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(7px); /* Start and end at the original position */
+  }
+  50% {
+    transform: translateY(0px); /* Move up by 20 pixels */
+  }
 }
