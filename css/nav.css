@@ -77,8 +77,8 @@ nav > a {
   overflow: hidden;
   background: white;
   position: absolute;
-  top: 25px;
-  left: 55px;
+  top: 5px;
+  left: 35px;
   z-index: 0;
   display: flex;
   flex-direction: column;

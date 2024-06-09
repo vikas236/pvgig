@@ -1,8 +1,10 @@
 import essen from "./essentials.js";
 
 async function homeW() {
+  let section_no = 0;
   const title = document.querySelector(".home .intro .title");
   const words = ["WE DESIGN", "WE DEVELOP", "WE CREATE", "WE ARE PVGIG"];
+  let movement = false;
 
   words.forEach(async (e, i) => {
     setTimeout(() => {
@@ -52,6 +54,49 @@ async function homeW() {
       }, 25 * i);
     }
   }, 1750 * 4);
+
+  const home = document.querySelector(".home");
+
+  home.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0 && section_no < 1) moveDown();
+    else if (e.deltaY < 0 && section_no > 0) moveUp();
+    setTimeout(() => {
+      home.style.top = -100 * section_no + "vh";
+    }, 200);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (
+      (e.key == "ArrowDown" || e.key == "PageDown" || e.key == " ") &&
+      section_no < 1
+    )
+      moveDown();
+    else if ((e.key == "ArrowUp" || e.key == "PageUp") && section_no > 0)
+      moveUp();
+    setTimeout(() => {
+      home.style.top = -100 * section_no + "vh";
+    }, 200);
+  });
+
+  function moveDown() {
+    if (!movement) {
+      section_no++;
+      movement = true;
+      setTimeout(() => {
+        movement = false;
+      }, 750);
+    }
+  }
+
+  function moveUp() {
+    if (!movement) {
+      section_no--;
+      movement = true;
+      setTimeout(() => {
+        movement = false;
+      }, 750);
+    }
+  }
 }
 
 export default homeW;

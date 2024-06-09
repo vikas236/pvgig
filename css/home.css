@@ -1,3 +1,14 @@
+.home {
+  width: 100vw;
+  height: 200vw;
+  position: relative;
+  top: 0;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .intro {
   width: 100vw;
   height: 100vh;
@@ -47,7 +58,7 @@
   left: 40px;
   color: white;
   font-size: 14px;
-  line-height: 25px;
+  line-height: 20px;
 }
 
 .intro i {
@@ -68,4 +79,92 @@
   50% {
     transform: translateY(0px); /* Move up by 20 pixels */
   }
+}
+
+/* our beliefs */
+
+.our_beliefs {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.our_beliefs .content {
+  width: 1150px;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+}
+
+.our_beliefs h1 {
+  color: white;
+  transform: scaleX(1.32);
+  font-size: 24px;
+  text-align: left;
+  position: relative;
+}
+
+.our_beliefs h1:nth-child(2) {
+  left: 10px;
+}
+
+.our_beliefs h1:nth-child(3) {
+  left: 15px;
+}
+
+.our_beliefs button {
+  background: black;
+  color: white;
+  font-weight: 800;
+  border-radius: 19px;
+  font-size: 15px;
+  transform: scaleX(1.34);
+  letter-spacing: 2px;
+  padding: 10px 65px;
+  position: relative;
+  left: -21px;
+  margin-top: 150px;
+  border: 1px solid white;
+}
+
+.our_beliefs .images {
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid white;
+  position: absolute;
+  left: 850px;
+  top: 75px;
+}
+
+.our_beliefs .images img {
+  width: 350px;
+  position: absolute;
+  inset: 0;
+  top: 325px;
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.our_beliefs .images img:nth-child(2) {
+  top: 225px;
+  left: 175px;
+  z-index: 2;
+}
+
+.our_beliefs .images img:nth-child(3) {
+  top: 125px;
+  left: 350px;
+  z-index: 3;
+}
+
+.our_beliefs .images img:nth-child(4) {
+  top: 0;
+  left: 525px;
+  z-index: 4;
 }
