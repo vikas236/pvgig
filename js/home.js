@@ -58,6 +58,7 @@ async function homeW() {
   const home = document.querySelector(".home");
 
   home.addEventListener("wheel", (e) => {
+    playerActivity();
     if (e.deltaY > 0 && section_no < 1) moveDown();
     else if (e.deltaY < 0 && section_no > 0) moveUp();
     setTimeout(() => {
@@ -66,6 +67,7 @@ async function homeW() {
   });
 
   document.addEventListener("keydown", (e) => {
+    playerActivity();
     if (
       (e.key == "ArrowDown" || e.key == "PageDown" || e.key == " ") &&
       section_no < 1
@@ -96,6 +98,22 @@ async function homeW() {
         movement = false;
       }, 750);
     }
+  }
+
+  function playerActivity() {
+    const player = document.querySelectorAll(".our_beliefs img");
+
+    setTimeout(() => {
+      if (section_no == 1) {
+        player.forEach((e) => {
+          e.classList.add("active");
+        });
+      } else {
+        player.forEach((e) => {
+          e.classList.remove("active");
+        });
+      }
+    }, 500);
   }
 }
 

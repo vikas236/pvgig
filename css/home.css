@@ -136,35 +136,42 @@
 .our_beliefs .images {
   width: fit-content;
   height: fit-content;
-  border: 1px solid white;
   position: absolute;
   left: 850px;
   top: 75px;
 }
 
 .our_beliefs .images img {
-  width: 350px;
+  width: 250px;
   position: absolute;
-  inset: 0;
-  top: 325px;
+  top: 250px;
+  left: 75px;
   z-index: 1;
-  transform: rotateY(180deg);
+  opacity: 0;
+  transition: 0.5s;
 }
 
-.our_beliefs .images img:nth-child(2) {
-  top: 225px;
-  left: 175px;
+.our_beliefs .images img.active {
+  opacity: 1;
+}
+
+.our_beliefs .images img.active:nth-child(2) {
+  width: 270px;
+  top: 150px;
+  left: 225px;
   z-index: 2;
 }
 
-.our_beliefs .images img:nth-child(3) {
-  top: 125px;
-  left: 350px;
+.our_beliefs .images img.active:nth-child(3) {
+  width: 280px;
+  top: 50px;
+  left: 375px;
   z-index: 3;
 }
 
-.our_beliefs .images img:nth-child(4) {
-  top: 0;
-  left: 525px;
+.our_beliefs .images img.active:nth-child(4) {
+  width: 310px;
+  top: -50px;
+  left: 500px;
   z-index: 4;
 }
