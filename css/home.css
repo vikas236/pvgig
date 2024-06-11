@@ -1,6 +1,6 @@
 .home {
   width: 100vw;
-  height: 200vw;
+  height: 400vh;
   position: relative;
   top: 0;
   transition: 0.5s;
@@ -174,4 +174,28 @@
   top: -50px;
   left: 500px;
   z-index: 4;
+}
+
+/* our playbook */
+
+.our_playbook {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+}
+
+/* contact us */
+
+.contact_us {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+}
+
+.contact_us h1 {
+  font-size: calc(15vw + 20vh);
+  transform: scaleX(1.34);
+  margin-left: 275px;
+  letter-spacing: -30px;
+  text-align: left;
 }

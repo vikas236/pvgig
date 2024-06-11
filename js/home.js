@@ -59,7 +59,7 @@ async function homeW() {
 
   home.addEventListener("wheel", (e) => {
     playerActivity();
-    if (e.deltaY > 0 && section_no < 1) moveDown();
+    if (e.deltaY > 0 && section_no < 3) moveDown();
     else if (e.deltaY < 0 && section_no > 0) moveUp();
     setTimeout(() => {
       home.style.top = -100 * section_no + "vh";
@@ -70,11 +70,15 @@ async function homeW() {
     playerActivity();
     if (
       (e.key == "ArrowDown" || e.key == "PageDown" || e.key == " ") &&
-      section_no < 1
+      section_no < 3
     )
       moveDown();
     else if ((e.key == "ArrowUp" || e.key == "PageUp") && section_no > 0)
       moveUp();
+
+    if (e.key == "Home") section_no = 0;
+    if (e.key == "End") section_no = 3;
+
     setTimeout(() => {
       home.style.top = -100 * section_no + "vh";
     }, 200);
