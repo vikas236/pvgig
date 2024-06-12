@@ -119,6 +119,36 @@ async function homeW() {
       }
     }, 500);
   }
+
+  function playBookImage() {
+    const container = document.querySelector(".our_playbook .image");
+    container.addEventListener("mousemove", (e) => {
+      const img = container.querySelector(".our_playbook img");
+
+      const { clientX, clientY } = e;
+      const { offsetWidth, offsetHeight } = container;
+      const { left, top } = container.getBoundingClientRect();
+
+      const centerX = left + offsetWidth / 2;
+      const centerY = top + offsetHeight / 2;
+
+      const percentX = (clientX - centerX) / (offsetWidth / 2);
+      const percentY = (clientY - centerY) / (offsetHeight / 2);
+
+      const rotateY = percentX * 20;
+      const rotateX = -percentY * 20;
+
+      img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    document
+      .querySelector(".image-container")
+      .addEventListener("mouseleave", () => {
+        const img = document.querySelector(".image-container img");
+        img.style.transform = "rotateX(0deg) rotateY(0deg)";
+      });
+  }
+  playBookImage();
 }
 
 export default homeW;
