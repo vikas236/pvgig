@@ -18,7 +18,7 @@ nav > a {
   font-weight: 800;
   transform: scaleX(1.32);
   position: relative;
-  z-index: 1;
+  z-index: 5;
 }
 
 /* hammenu */
@@ -32,7 +32,7 @@ nav > a {
   align-items: end;
   cursor: pointer;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 .ham .bar,
