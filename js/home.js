@@ -105,6 +105,7 @@ async function homeW() {
     });
 
     document.addEventListener("touchend", () => {
+      playerActivity();
       // Reset the text content when the touch ends
       if (direction == "down" && section_no < 3) moveDown();
       else if (direction == "up" && section_no > 0) moveUp();
