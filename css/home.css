@@ -239,6 +239,7 @@
 
 .our_playbook button {
   margin-left: 1px;
+  left: 8%;
 }
 
 /* contact us */
@@ -522,6 +523,10 @@
 
   .our_playbook h1 {
     line-height: normal;
+  }
+
+  .our_playbook button {
+    left: 8%;
   }
 }
 
