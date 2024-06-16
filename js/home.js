@@ -84,6 +84,38 @@ async function homeW() {
     }, 200);
   });
 
+  function touchMovement() {
+    let startY = 0;
+    let direction;
+
+    document.addEventListener("touchstart", (e) => {
+      // Get the initial touch position
+      startY = e.touches[0].clientY;
+    });
+
+    document.addEventListener("touchmove", (e) => {
+      const currentY = e.touches[0].clientY;
+      const diffY = startY - currentY;
+
+      if (diffY > 0) {
+        direction = "down";
+      } else {
+        direction = "up";
+      }
+    });
+
+    document.addEventListener("touchend", () => {
+      // Reset the text content when the touch ends
+      if (direction == "down" && section_no < 3) moveDown();
+      else if (direction == "up" && section_no > 0) moveUp();
+
+      setTimeout(() => {
+        home.style.top = -100 * section_no + "vh";
+      }, 200);
+    });
+  }
+  touchMovement();
+
   function moveDown() {
     if (!movement) {
       section_no++;
@@ -141,12 +173,10 @@ async function homeW() {
       img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
 
-    document
-      .querySelector(".image-container")
-      .addEventListener("mouseleave", () => {
-        const img = document.querySelector(".image-container img");
-        img.style.transform = "rotateX(0deg) rotateY(0deg)";
-      });
+    container.addEventListener("mouseleave", () => {
+      const img = document.querySelector(".image-container img");
+      img.style.transform = "rotateX(0deg) rotateY(0deg)";
+    });
   }
   playBookImage();
 }

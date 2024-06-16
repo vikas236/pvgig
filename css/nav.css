@@ -177,3 +177,9 @@ nav > a {
   position: absolute;
   inset: 0;
 }
+
+@media only screen and (max-width: 752px) {
+  nav {
+    padding: 0 35px;
+  }
+}
