@@ -183,4 +183,20 @@ nav > a {
   nav {
     padding: 0 35px;
   }
+
+  .nav_links {
+    left: 25px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .nav_links {
+    padding: 35px;
+    padding-top: 75px;
+  }
+
+  .nav_links.active {
+    width: 85vw;
+    height: 425px;
+  }
 }
