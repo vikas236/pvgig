@@ -1126,7 +1126,6 @@
     z-index: 1;
     opacity: 0;
     transition: 0.5s;
-    background: url("../images/player.png");
   }
 
   .our_beliefs .images img.active {
