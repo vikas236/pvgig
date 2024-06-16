@@ -780,6 +780,10 @@
     font-size: 74px;
   }
 
+  .intro .subtext {
+    bottom: 80px;
+  }
+
   .intro i {
     font-size: 18px;
   }
