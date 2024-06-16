@@ -97,9 +97,9 @@ async function homeW() {
       const currentY = e.touches[0].clientY;
       const diffY = startY - currentY;
 
-      if (diffY > 0) {
+      if (diffY > 5) {
         direction = "down";
-      } else {
+      } else if (diffY < -5) {
         direction = "up";
       }
     });
