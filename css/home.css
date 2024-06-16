@@ -1116,6 +1116,7 @@
   .our_beliefs .images {
     width: 100%;
     height: 100%;
+    border: 1px solid white;
   }
 
   .our_beliefs .images img {
