@@ -846,8 +846,8 @@
   /* our belief */
 
   .our_beliefs .wrapper {
-    padding: 0 35px;
-    padding-bottom: 50px;
+    padding: 0 25px;
+    padding-bottom: 35px;
   }
 
   .our_beliefs .content {
@@ -922,8 +922,8 @@
   }
 
   .our_playbook .wrapper {
-    padding: 0 35px;
-    padding-bottom: 50px;
+    padding: 0 25px;
+    padding-bottom: 35px;
   }
 
   .our_playbook .image {
