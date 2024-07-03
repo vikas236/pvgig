@@ -947,6 +947,7 @@
 
   .our_playbook .content img {
     width: 75% !important;
+    object-fit: cover;
   }
 
   .contact_us input {
