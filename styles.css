@@ -17,6 +17,8 @@
 body {
   width: 100vw;
   height: fit-content;
+  opacity: 0;
+  transition: 0.5s;
 }
 
 #content {

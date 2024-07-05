@@ -25,6 +25,8 @@ function loadPage(path) {
       container.innerHTML = "Page not found";
     }
   };
+  const body = document.querySelector("body");
+  body.style.opacity = 1;
   request.send();
 }
 
