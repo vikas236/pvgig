@@ -57,10 +57,11 @@ async function homeW() {
 
   const home = document.querySelector(".home");
 
-  home.addEventListener("wheel", (e) => {
+  document.addEventListener("wheel", (e) => {
     playerActivity();
     if (e.deltaY > 0 && section_no < 3) moveDown();
     else if (e.deltaY < 0 && section_no > 0) moveUp();
+
     setTimeout(() => {
       home.style.top = -100 * section_no + "vh";
     }, 200);
@@ -76,8 +77,18 @@ async function homeW() {
     else if ((e.key == "ArrowUp" || e.key == "PageUp") && section_no > 0)
       moveUp();
 
-    if (e.key == "Home") section_no = 0;
-    if (e.key == "End") section_no = 3;
+    if (e.key == "Home") {
+      section_no = 0;
+
+      disableContactUs();
+    }
+    if (e.key == "End") {
+      section_no = 3;
+
+      setTimeout(() => {
+        enableContanctUs();
+      }, 400);
+    }
 
     setTimeout(() => {
       home.style.top = -100 * section_no + "vh";
@@ -97,9 +108,9 @@ async function homeW() {
       const currentY = e.touches[0].clientY;
       const diffY = startY - currentY;
 
-      if (diffY > 5) {
+      if (diffY > 25) {
         direction = "down";
-      } else if (diffY < -5) {
+      } else if (diffY < -25) {
         direction = "up";
       }
     });
@@ -121,6 +132,8 @@ async function homeW() {
     if (!movement) {
       section_no++;
       movement = true;
+      if (section_no == 3) enableContanctUs();
+
       setTimeout(() => {
         movement = false;
       }, 750);
@@ -131,6 +144,9 @@ async function homeW() {
     if (!movement) {
       section_no--;
       movement = true;
+
+      if (section_no < 3) disableContactUs();
+
       setTimeout(() => {
         movement = false;
       }, 750);
@@ -180,6 +196,16 @@ async function homeW() {
     });
   }
   playBookImage();
+
+  function enableContanctUs() {
+    const contact_us = document.querySelector(".contact_us");
+    contact_us.classList.add("active");
+  }
+
+  function disableContactUs() {
+    const contact_us = document.querySelector(".contact_us");
+    contact_us.classList.remove("active");
+  }
 }
 
 export default homeW;
