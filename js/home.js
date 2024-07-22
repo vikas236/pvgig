@@ -132,7 +132,7 @@ async function homeW() {
 
   function moveDown() {
     const path = window.location.hash.substring(1);
-    if (!movement && path == "home") {
+    if (!movement && (path == "home" || path == "")) {
       section_no++;
       movement = true;
       if (section_no == 3) enableContanctUs();
@@ -145,7 +145,7 @@ async function homeW() {
 
   function moveUp() {
     const path = window.location.hash.substring(1);
-    if (!movement && path == "home") {
+    if (!movement && (path == "home" || path == "")) {
       section_no--;
       movement = true;
 
