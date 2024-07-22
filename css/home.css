@@ -87,7 +87,7 @@
 .our_beliefs {
   width: 100vw;
   height: 100vh;
-  background: black;
+  background: black !important;
   display: flex;
   align-items: center;
   justify-content: center;
