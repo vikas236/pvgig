@@ -130,7 +130,7 @@
     display: none;
   }
 
-  .our_work:hover {
+  .our_work .project:hover a {
     transform: none;
   }
 
