@@ -131,7 +131,8 @@ async function homeW() {
   touchMovement();
 
   function moveDown() {
-    if (!movement) {
+    const path = window.location.hash.substring(1);
+    if (!movement && path == "home") {
       section_no++;
       movement = true;
       if (section_no == 3) enableContanctUs();
@@ -143,7 +144,8 @@ async function homeW() {
   }
 
   function moveUp() {
-    if (!movement) {
+    const path = window.location.hash.substring(1);
+    if (!movement && path == "home") {
       section_no--;
       movement = true;
 
