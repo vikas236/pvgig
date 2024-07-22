@@ -67,6 +67,7 @@
   right: 5px;
   cursor: pointer;
   transition: 0.1s;
+  display: none;
 }
 
 .our_work i:hover,
@@ -127,6 +128,10 @@
 @media only screen and (max-width: 1200px) {
   .our_work img {
     display: none;
+  }
+
+  .our_work:hover {
+    transform: none;
   }
 
   .our_work i {
