@@ -1,6 +1,8 @@
 import essen from "./essentials.js";
 
 async function homeW() {
+  essen.scrollActivity(0);
+
   let section_no = 0;
   const title = document.querySelector(".home .intro .title");
   const words = ["WE DESIGN", "WE DEVELOP", "WE CREATE", "WE ARE PVGIG"];

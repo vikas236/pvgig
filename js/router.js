@@ -1,5 +1,6 @@
-import homeW from "./home.js";
 import navW from "./nav.js";
+import homeW from "./home.js";
+import ourWorkW from "./our_work.js";
 navW();
 
 // Function to handle routing based on hash change
@@ -19,8 +20,7 @@ function loadPage(path) {
       container.innerHTML = request.responseText;
       navLinks(path);
       if (path == "home") homeW();
-      // else {
-      // }
+      else if (path == "our_work") ourWorkW();
     } else {
       container.innerHTML = "Page not found";
     }
